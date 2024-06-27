@@ -18,6 +18,11 @@ List<Map<String, dynamic>> decks = [
             'A UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase.'
       },
       {'question': 'What language does Flutter use?', 'answer': 'Dart.'},
+      {'question': 'What is a Widget in Flutter?', 'answer': 'A Widget is a basic building block of a Flutter app\'s user interface, representing a part of the UI that can be drawn on the screen.'},
+      {'question': 'What is the difference between StatefulWidget and StatelessWidget in Flutter?', 'answer': 'A StatelessWidget is immutable and cannot change its state once it is built, while a StatefulWidget can change its state over time.'},
+      {'question': 'How do you perform asynchronous operations in Flutter?', 'answer': 'Asynchronous operations in Flutter are performed using async and await keywords, along with the Future class.'},
+      {'question': 'What is a Navigator in Flutter?', 'answer': 'The Navigator is a widget that manages a stack of route objects and allows for navigation between different screens or pages in a Flutter app.'},
+      {'question': 'What is the purpose of the pubspec.yaml file in a Flutter project?', 'answer': 'The pubspec.yaml file is used to manage the project\'s dependencies, assets, and other metadata such as the app\'s name, version, and author details.'},
     ],
   },
 ];
