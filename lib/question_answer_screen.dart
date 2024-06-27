@@ -51,33 +51,51 @@ class _QuestionAnswerScreenState extends State<QuestionAnswerScreen> {
           children: [
             Expanded(
               child: Center(
-                child: Text(
-                  flashcards[currentIndex]['question']!,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(fontSize: 24),
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Text(
+                    flashcards[currentIndex]['question']!,
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      fontSize: 28, // Povećana veličina fonta
+                      color: Color.fromARGB(255, 18, 7, 39), // Ljubičasta boja
+                    ),
+                  ),
                 ),
               ),
             ),
             if (showAnswer)
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(16.0),
                 child: Text(
                   flashcards[currentIndex]['answer']!,
                   textAlign: TextAlign.center,
                   style: const TextStyle(fontSize: 20),
                 ),
               ),
-            ElevatedButton(
-              onPressed: () {
-                if (showAnswer) {
-                  _showNextCard();
-                } else {
-                  setState(() {
-                    showAnswer = true;
-                  });
-                }
-              },
-              child: Text(showAnswer ? 'Next' : 'Show answer'),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 20.0),
+              child: ElevatedButton(
+                onPressed: () {
+                  if (showAnswer) {
+                    _showNextCard();
+                  } else {
+                    setState(() {
+                      showAnswer = true;
+                    });
+                  }
+                },
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 16, // Povećava visinu dugmeta
+                    horizontal: 32, // Povećava širinu dugmeta
+                  ),
+                ),
+                child: Text(
+                  showAnswer ? 'Next' : 'Show answer',
+                  style: const TextStyle(fontSize: 18),
+                ),
+              ),
             ),
           ],
         ),

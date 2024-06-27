@@ -17,7 +17,14 @@ class _DecksScreenState extends State<DecksScreen> {
       onWillPop: () async => false, // Sprečava vraćanje unazad
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('DECKS'),
+          title: const Text(
+            'YOUR DECKS',
+            style: TextStyle(
+              color: Color.fromARGB(255, 18, 7, 39), // Crna boja za naslov
+              fontSize: 25,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
           automaticallyImplyLeading: false, // Uklanja back dugme
         ),
         body: Column(
@@ -41,21 +48,45 @@ class _DecksScreenState extends State<DecksScreen> {
                       });
                     },
                     child: Card(
+                      color: const Color.fromRGBO(
+                          98, 0, 234, 0.8), // Ljubičasta boja pozadine deka
                       child: Center(
-                        child: Text(deck['name']),
+                        child: Text(
+                          deck['name'],
+                          style: const TextStyle(
+                            color: Colors.white, // Bijeli tekst
+                            fontWeight: FontWeight.bold, // Boldan font
+                            fontSize: 18, // Veličina fonta
+                          ),
+                        ),
                       ),
                     ),
                   );
                 },
               ),
             ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/createDeck').then((_) {
-                  setState(() {});
-                });
-              },
-              child: const Text('Add more'),
+            const SizedBox(height: 20), // Razmak između grida i dugmeta
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/createDeck').then((_) {
+                    setState(() {});
+                  });
+                },
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 16, // Povećava visinu dugmeta
+                    horizontal: 32, // Povećava širinu dugmeta
+                  ),
+                ),
+                child: const Text(
+                  'Add more',
+                  style: TextStyle(
+                    fontSize: 18, // Veličina fonta
+                  ),
+                ),
+              ),
             ),
           ],
         ),
@@ -63,4 +94,3 @@ class _DecksScreenState extends State<DecksScreen> {
     );
   }
 }
-

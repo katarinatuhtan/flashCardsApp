@@ -63,11 +63,11 @@ class _CreateDeckScreenState extends State<CreateDeckScreen> {
   Widget build(BuildContext context) {
     // ignore: deprecated_member_use
     return WillPopScope(
-      onWillPop: () async => false, // Sprječava vraćanje unazad
+      onWillPop: () async => true, // Sprječava vraćanje unazad
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Create a new deck'),
-          automaticallyImplyLeading: false, // Uklanja back button
+          automaticallyImplyLeading: true, // Uklanja back button
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
