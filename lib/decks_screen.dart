@@ -1,18 +1,24 @@
 import 'package:flash_cards_app/main.dart';
 import 'package:flutter/material.dart';
 
-class DecksScreen extends StatelessWidget {
+class DecksScreen extends StatefulWidget {
   const DecksScreen({super.key});
 
+  @override
+  // ignore: library_private_types_in_public_api
+  _DecksScreenState createState() => _DecksScreenState();
+}
+
+class _DecksScreenState extends State<DecksScreen> {
   @override
   Widget build(BuildContext context) {
     // ignore: deprecated_member_use
     return WillPopScope(
-      onWillPop: () async => false, // Sprječava vraćanje unazad
+      onWillPop: () async => false, // Sprečava vraćanje unazad
       child: Scaffold(
         appBar: AppBar(
           title: const Text('DECKS'),
-          automaticallyImplyLeading: false, // Uklanja back button
+          automaticallyImplyLeading: false, // Uklanja back dugme
         ),
         body: Column(
           children: [
@@ -27,7 +33,12 @@ class DecksScreen extends StatelessWidget {
                   return GestureDetector(
                     onTap: () {
                       Navigator.pushNamed(context, '/deckDetail',
-                          arguments: deck);
+                              arguments: deck)
+                          .then((result) {
+                        if (result == true) {
+                          setState(() {});
+                        }
+                      });
                     },
                     child: Card(
                       child: Center(
@@ -40,7 +51,9 @@ class DecksScreen extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/createDeck');
+                Navigator.pushNamed(context, '/createDeck').then((_) {
+                  setState(() {});
+                });
               },
               child: const Text('Add more'),
             ),

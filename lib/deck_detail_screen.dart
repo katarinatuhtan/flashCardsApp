@@ -32,7 +32,8 @@ class DeckDetailScreen extends StatelessWidget {
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text('Deck deleted successfully')),
                 );
-                Navigator.pop(context);
+                Navigator.pop(
+                    context, true); // Vraća true da označi uspešno brisanje
               },
               child: const Text('Delete'),
             ),

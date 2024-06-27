@@ -51,24 +51,50 @@ class HomeScreen extends StatelessWidget {
       onWillPop: () async => false, // Sprečava vraćanje unazad
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Flash Cards'),
+          title: const Text(
+            'Flashcards app',
+            style: TextStyle(
+              color: Colors.black, // Crna boja za naslov
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
           automaticallyImplyLeading: false, // Uklanja back dugme
+          centerTitle: true, // Centrirani naslov
+          elevation: 0, // Uklanjanje senke ispod AppBar-a
         ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/decks');
-                },
-                child: const Text('Your decks'),
+              SizedBox(
+                width: 200, // Širina dugmadi
+                height: 50, // Visina dugmadi
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/decks');
+                  },
+                  child: const Text(
+                    'Your decks',
+                    style:
+                        TextStyle(fontSize: 18), // Veći font za tekst dugmeta
+                  ),
+                ),
               ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/createDeck');
-                },
-                child: const Text('Create a new deck'),
+              const SizedBox(height: 20), // Razmak između dugmadi
+              SizedBox(
+                width: 200, // Širina dugmadi
+                height: 50, // Visina dugmadi
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/createDeck');
+                  },
+                  child: const Text(
+                    'Create a new deck',
+                    style:
+                        TextStyle(fontSize: 18), // Veći font za tekst dugmeta
+                  ),
+                ),
               ),
             ],
           ),
