@@ -75,20 +75,20 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // ignore: deprecated_member_use
     return WillPopScope(
-      onWillPop: () async => false, // Sprečava vraćanje unazad
+      onWillPop: () async => false, 
       child: Scaffold(
         appBar: AppBar(
           title: const Text(
             'FLASHCARDS APP',
             style: TextStyle(
-              color: Color.fromARGB(255, 18, 7, 39), // Crna boja za naslov
+              color: Color.fromARGB(255, 18, 7, 39), 
               fontSize: 35,
               fontWeight: FontWeight.bold,
             ),
           ),
-          automaticallyImplyLeading: false, // Uklanja back dugme
-          centerTitle: true, // Centrirani naslov
-          elevation: 0, // Uklanjanje senke ispod AppBar-a
+          automaticallyImplyLeading: false, 
+          centerTitle: true, 
+          elevation: 0,
         ),
         body: Stack(
           children: [
@@ -97,7 +97,7 @@ class HomeScreen extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Image.asset(
-                  'assets/logo.png', // Putanja do vašeg logotipa
+                  'assets/logo.png', 
                   width: 180,
                   height: 180,
                 ),
@@ -108,8 +108,8 @@ class HomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 200, // Širina dugmadi
-                    height: 50, // Visina dugmadi
+                    width: 200, 
+                    height: 50, 
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.pushNamed(context, '/decks');
@@ -117,14 +117,14 @@ class HomeScreen extends StatelessWidget {
                       child: const Text(
                         'Your decks',
                         style: TextStyle(
-                            fontSize: 18), // Veći font za tekst dugmeta
+                            fontSize: 18), 
                       ),
                     ),
                   ),
-                  const SizedBox(height: 20), // Razmak između dugmadi
+                  const SizedBox(height: 20), 
                   SizedBox(
-                    width: 200, // Širina dugmadi
-                    height: 50, // Visina dugmadi
+                    width: 200, 
+                    height: 50, 
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.pushNamed(context, '/createDeck');
@@ -132,7 +132,7 @@ class HomeScreen extends StatelessWidget {
                       child: const Text(
                         'Create a new deck',
                         style: TextStyle(
-                            fontSize: 18), // Veći font za tekst dugmeta
+                            fontSize: 18), 
                       ),
                     ),
                   ),

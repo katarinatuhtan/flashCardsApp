@@ -17,7 +17,7 @@ class DeckDetailScreen extends StatelessWidget {
           title: Text(
             deck['name'],
             style: const TextStyle(
-              color: Color.fromARGB(255, 18, 7, 39), // Crna boja za naslov
+              color: Color.fromARGB(255, 18, 7, 39), 
               fontSize: 30,
               fontWeight: FontWeight.bold,
             ),
@@ -28,17 +28,17 @@ class DeckDetailScreen extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start, // Poravnanje na levo
+            crossAxisAlignment: CrossAxisAlignment.start, 
             children: [
               Padding(
                 padding:
-                    const EdgeInsets.only(left: 16.0), // Odmak od levog kraja
+                    const EdgeInsets.only(left: 16.0), 
                 child: SizedBox(
                   width: 200,
                   height: 50,
                   child: ElevatedButton.icon(
                     icon: const Icon(IconData(0xe21a,
-                        fontFamily: 'MaterialIcons')), // Ikonica za edit
+                        fontFamily: 'MaterialIcons')), 
                     label: const Text('Add more'),
                     onPressed: () {
                       Navigator.pushNamed(context, '/createDeck',
@@ -47,16 +47,16 @@ class DeckDetailScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 20), // Razmak između dugmadi
+              const SizedBox(height: 20),
               Padding(
                 padding:
-                    const EdgeInsets.only(left: 16.0), // Odmak od levog kraja
+                    const EdgeInsets.only(left: 16.0), 
                 child: SizedBox(
                   width: 200,
                   height: 50,
                   child: ElevatedButton.icon(
                     icon: const Icon(IconData(0xe1b9,
-                        fontFamily: 'MaterialIcons')), // Ikonica za delete
+                        fontFamily: 'MaterialIcons')), 
                     label: const Text('Delete'),
                     onPressed: () {
                       decks.remove(deck);
@@ -65,21 +65,21 @@ class DeckDetailScreen extends StatelessWidget {
                             content: Text('Deck deleted successfully')),
                       );
                       Navigator.pop(context,
-                          true); // Vraća true da označi uspešno brisanje
+                          true); 
                     },
                   ),
                 ),
               ),
-              const SizedBox(height: 20), // Razmak između dugmadi
+              const SizedBox(height: 20), 
               Padding(
                 padding:
-                    const EdgeInsets.only(left: 16.0), // Odmak od levog kraja
+                    const EdgeInsets.only(left: 16.0), 
                 child: SizedBox(
                   width: 200,
                   height: 50,
                   child: ElevatedButton.icon(
                     icon: const Icon(IconData(0xf0573,
-                        fontFamily: 'MaterialIcons')), // Ikonica za go
+                        fontFamily: 'MaterialIcons')), 
                     label: const Text('Go'),
                     onPressed: () {
                       Navigator.pushNamed(context, '/quiz', arguments: deck);

@@ -40,11 +40,11 @@ class _QuestionAnswerScreenState extends State<QuestionAnswerScreen> {
   Widget build(BuildContext context) {
     // ignore: deprecated_member_use
     return WillPopScope(
-      onWillPop: () async => false, // Sprječava vraćanje unazad
+      onWillPop: () async => false, 
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Quiz'),
-          automaticallyImplyLeading: false, // Uklanja back button
+          automaticallyImplyLeading: false, 
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -57,8 +57,8 @@ class _QuestionAnswerScreenState extends State<QuestionAnswerScreen> {
                     flashcards[currentIndex]['question']!,
                     textAlign: TextAlign.center,
                     style: const TextStyle(
-                      fontSize: 28, // Povećana veličina fonta
-                      color: Color.fromARGB(255, 18, 7, 39), // Ljubičasta boja
+                      fontSize: 28, 
+                      color: Color.fromARGB(255, 18, 7, 39), 
                     ),
                   ),
                 ),
@@ -87,8 +87,8 @@ class _QuestionAnswerScreenState extends State<QuestionAnswerScreen> {
                 },
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(
-                    vertical: 16, // Povećava visinu dugmeta
-                    horizontal: 32, // Povećava širinu dugmeta
+                    vertical: 16, 
+                    horizontal: 32, 
                   ),
                 ),
                 child: Text(
