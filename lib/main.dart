@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flash Cards App',
+      title: 'Flashcards App',
       initialRoute: '/',
       routes: {
         '/': (context) => const HomeScreen(),
@@ -75,19 +75,19 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // ignore: deprecated_member_use
     return WillPopScope(
-      onWillPop: () async => false, 
+      onWillPop: () async => false,
       child: Scaffold(
         appBar: AppBar(
           title: const Text(
             'FLASHCARDS APP',
             style: TextStyle(
-              color: Color.fromARGB(255, 18, 7, 39), 
+              color: Color.fromARGB(255, 18, 7, 39),
               fontSize: 35,
               fontWeight: FontWeight.bold,
             ),
           ),
-          automaticallyImplyLeading: false, 
-          centerTitle: true, 
+          automaticallyImplyLeading: false,
+          centerTitle: true,
           elevation: 0,
         ),
         body: Stack(
@@ -97,7 +97,7 @@ class HomeScreen extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Image.asset(
-                  'assets/logo.png', 
+                  'assets/logo.png',
                   width: 180,
                   height: 180,
                 ),
@@ -108,31 +108,29 @@ class HomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 200, 
-                    height: 50, 
+                    width: 200,
+                    height: 50,
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.pushNamed(context, '/decks');
                       },
                       child: const Text(
                         'Your decks',
-                        style: TextStyle(
-                            fontSize: 18), 
+                        style: TextStyle(fontSize: 18),
                       ),
                     ),
                   ),
-                  const SizedBox(height: 20), 
+                  const SizedBox(height: 20),
                   SizedBox(
-                    width: 200, 
-                    height: 50, 
+                    width: 200,
+                    height: 50,
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.pushNamed(context, '/createDeck');
                       },
                       child: const Text(
                         'Create a new deck',
-                        style: TextStyle(
-                            fontSize: 18), 
+                        style: TextStyle(fontSize: 18),
                       ),
                     ),
                   ),
